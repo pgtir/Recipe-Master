@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+     <link rel="stylesheet" href="styles.css">
+     <link rel="stylesheet" href="responsive.css">
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+     <!-- <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+</style> -->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Quintessential&display=swap');
+  </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Master</title>
+  </head>
+  <body>
+      <main class="shadow">
+          <section class="recipe-master">
+            <section class="modal-container  justify-content-center align-items-center">
+              <div class="modal-window shadow-sm p-5 py-4 ">
+                <form class="recipe-details-form d-flex flex-column justify-content-center mt-2 mb-1">
+                  <div class="form-row mb-4">
+                    <h3 class="form-heading  text-center text-md-start">Recipe data</h3>
+                    <div class="row-data">
+                      <div class="label">
+                        <label>Title</label>
+                        <input value="TEST" class="formInput" required name="title" type="text" />
+                      </div>
+                      <div class="label">
+                        <label>URL</label>
+                        <input value="" class="formInput" required name="sourceUrl" type="text" />
+                      </div> 
+                      <div class="label">
+                        <label>Image URL</label>
+                        <input value="" class="formInput" required name="image" type="text" />
+                      </div>
+                      <div class="label">
+                        <label>Publisher</label>
+                        <input value="" class="formInput" required name="publisher" type="text" />
+                      </div>
+                      <div class="label">
+                        <label>Cooking Time (minutes)</label>
+                        <input value="" class="formInput" required name="cookingTime" type="number" />
+                      </div>
+                      <div class="label">
+                        <label>Servings</label>
+                        <input value="" class="formInput" required name="servings" type="number" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-row mb-4">
+                    <h3 class="form-heading  text-center text-md-start">Ingredients</h3>
+                    <section class="row-data">
+                      <div class="label">
+                        <label>Ingredient 1</label>
+                        <input
+                          value="0.5,kg,Rice"
+                          type="text"
+                          required
+                          name="ingredient-1"
+                          placeholder="Format: 'Quantity,Unit,Description'"
+                          class="formInput"
+                        />
+                      </div>
+                      <div class="label">
+                        <label>Ingredient 2</label>
+                        <input
+                          value="1,,Avocado"
+                          type="text"
+                          name="ingredient-2"
+                          placeholder="Format: 'Quantity,Unit,Description'"
+                          class="formInput"
+                        />
+                      </div>
+                      <div class="label">
+                        <label>Ingredient 3</label>
+                        <input
+                          value=",,salt"
+                          type="text"
+                          name="ingredient-3"
+                          placeholder="Format: 'Quantity,Unit,Description'"
+                          class="formInput"
+                        />
+                      </div>
+                      <div class="label">
+                        <label>Ingredient 4</label>
+                        <input
+                          type="text"
+                          name="ingredient-4"
+                          placeholder="Format: 'Quantity,Unit,Description'"
+                          class="formInput"
+                        />
+                      </div>
+                      <div class="label">
+                        <label>Ingredient 5</label>
+                        <input
+                          type="text"
+                          name="ingredient-5"
+                          placeholder="Format: 'Quantity,Unit,Description'"
+                          class="formInput"
+                        />
+                      </div>
+                      <div class="label">
+                        <label>Ingredient 6</label>
+                        <input
+                          type="text"
+                          name="ingredient-6"
+                          placeholder="Format: 'Quantity,Unit,Description'"
+                          class="formInput"
+                        />
+                      </div>
+                    </section>
+                  </div>
+                  <div class="form-btns d-flex ">
+                    <div class="flex-grow-1 flex-md-grow-0"><button class="upload-btn  p-2 px-5 mb-2 w-100 shadow-sm" type="submit">UPLOAD</button></div>
+                    <div class="cancel-btn p-2 text-center shadow-sm px-5 mb-2 flex-grow-1 flex-md-grow-0">CANCEL</div>
+                  </div>
+                </form>
+              </div>
+            </section>
+            <div class="top-head">
+              <h1 class="logo px-2 px-sm-5 py-2 my-0"><i class="fas fa-utensils me-3"></i>Recipe Master</h1>
+            </div>
+            
+            <article class="trending shadow-lg">
+              <div class="main-section ">
+                <div class="heading-container p-3 py-2">
+                  <div class="heading shadow  text-center p-2 ">
+                    Trending this week  <i class="fab fa-gripfire ms-2"></i>
+                  </div>
+                </div>
+                <div class="list-item-group p-3 py-3 mb-5">
+                  <div class="list-item shadow mb-3 p-3 d-flex flex align-items-center ">
+                    <div class="item-img shadow-sm">
+                      <img src="/images/calum-lewis-vA1L1jRTM70-unsplash.jpg" class="img-fluid " alt="">
+                    </div>
+                    <div class="item-content">
+                      <div class="item-info">
+                        <div class="item-name">XYZ Title</div>
+                        <div class="item-about">Lorem ipsum dolor sit amet.</div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                  <div class="list-item shadow mb-3 p-3 d-flex flex align-items-center ">
+                    <div class="item-img shadow-sm">
+                      <img src="/images/calum-lewis-vA1L1jRTM70-unsplash.jpg" class="img-fluid " alt="">
+                    </div>
+                    <div class="item-content">
+                      <div class="item-info">
+                        <div class="item-name">XYZ Title</div>
+                        <div class="item-about">Lorem ipsum dolor sit amet.</div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                  <div class="list-item shadow mb-3 p-3 d-flex flex align-items-center ">
+                    <div class="item-img shadow-sm">
+                      <img src="/images/calum-lewis-vA1L1jRTM70-unsplash.jpg" class="img-fluid " alt="">
+                    </div>
+                    <div class="item-content">
+                      <div class="item-info">
+                        <div class="item-name">XYZ Title</div>
+                        <div class="item-about">Lorem ipsum dolor sit amet.</div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                  <div class="list-item shadow mb-3 p-3 d-flex flex align-items-center ">
+                    <div class="item-img shadow-sm">
+                      <img src="/images/calum-lewis-vA1L1jRTM70-unsplash.jpg" class="img-fluid " alt="">
+                    </div>
+                    <div class="item-content">
+                      <div class="item-info">
+                        <div class="item-name">XYZ Title</div>
+                        <div class="item-about">Lorem ipsum dolor sit amet.</div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                  <div class="list-item shadow mb-3 p-3 d-flex flex align-items-center ">
+                    <div class="item-img shadow-sm">
+                      <img src="/images/calum-lewis-vA1L1jRTM70-unsplash.jpg" class="img-fluid " alt="">
+                    </div>
+                    <div class="item-content">
+                      <div class="item-info">
+                        <div class="item-name">XYZ Title</div>
+                        <div class="item-about">Lorem ipsum dolor sit amet.</div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                  <div class="list-item shadow mb-3 p-3 d-flex flex align-items-center ">
+                    <div class="item-img shadow-sm">
+                      <img src="/images/calum-lewis-vA1L1jRTM70-unsplash.jpg" class="img-fluid " alt="">
+                    </div>
+                    <div class="item-content">
+                      <div class="item-info">
+                        <div class="item-name">XYZ Title</div>
+                        <div class="item-about">Lorem ipsum dolor sit amet.</div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                  <div class="list-item shadow mb-3 p-3 d-flex flex align-items-center ">
+                    <div class="item-img shadow-sm">
+                      <img src="/images/calum-lewis-vA1L1jRTM70-unsplash.jpg" class="img-fluid " alt="">
+                    </div>
+                    <div class="item-content">
+                      <div class="item-info">
+                        <div class="item-name">XYZ Title</div>
+                        <div class="item-about">Lorem ipsum dolor sit amet.</div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                  <div class="list-item shadow mb-3 p-3 d-flex flex align-items-center ">
+                    <div class="item-img shadow-sm">
+                      <img src="/images/calum-lewis-vA1L1jRTM70-unsplash.jpg" class="img-fluid " alt="">
+                    </div>
+                    <div class="item-content">
+                      <div class="item-info">
+                        <div class="item-name">XYZ Title</div>
+                        <div class="item-about">Lorem ipsum dolor sit amet.</div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                  <div class="list-item shadow mb-3 p-3 d-flex flex align-items-center ">
+                    <div class="item-img shadow-sm">
+                      <img src="/images/calum-lewis-vA1L1jRTM70-unsplash.jpg" class="img-fluid " alt="">
+                    </div>
+                    <div class="item-content">
+                      <div class="item-info">
+                        <div class="item-name">XYZ Title</div>
+                        <div class="item-about">Lorem ipsum dolor sit amet.</div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                  <div class="list-item shadow mb-3 p-3 d-flex flex align-items-center ">
+                    <div class="item-img shadow-sm">
+                      <img src="/images/calum-lewis-vA1L1jRTM70-unsplash.jpg" class="img-fluid " alt="">
+                    </div>
+                    <div class="item-content">
+                      <div class="item-info">
+                        <div class="item-name">XYZ Title</div>
+                        <div class="item-about">Lorem ipsum dolor sit amet.</div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                  <div class="list-item shadow mb-3 p-3 d-flex flex align-items-center ">
+                    <div class="item-img shadow-sm">
+                      <img src="/images/calum-lewis-vA1L1jRTM70-unsplash.jpg" class="img-fluid " alt="">
+                    </div>
+                    <div class="item-content">
+                      <div class="item-info">
+                        <div class="item-name">XYZ Title</div>
+                        <div class="item-about">Lorem ipsum dolor sit amet.</div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="highlights ">
+              <div class="user px-2 px-sm-5 px-xl-4">
+                <div class="dynamic-nav-text">
+                  
+                </div>
+                <div class="greeting">
+                  <div class="info ">
+                    <h4>Hello, Martha 👋</h4>
+                    <p>What you'd like to cook today?</p>
+                  </div>
+                  <div class="image">
+                    <img src="https://randomuser.me/api/portraits/women/81.jpg" class="shadow-sm rounded-circle img-fluid 
+                            " alt="Random user picture -1">
+                  </div>
+                </div>
+                <div class="search flex-grow-1 shadow-sm p-3 py-2">
+                  <div class="search-icon me-2">
+                    <i class="fas fa-search"></i>
+                  </div>
+                  <input type="text" class="search-input home-search "  placeholder=" Search by recipe item">
+                  <input type="text" class="search-input recipe-page-search"  placeholder="Want more recipes?">
+                </div>
+              </div>
+              <div class="blue px-2 px-sm-5 p-xl-4 ">
+                <section class="home d-none pb-4">
+                  <header class="p-4  shadow-sm mt-1 mb-4">
+                    <div class="header-img">
+                      <img src="images/Chef-male.png" class="img-fluid" alt="">
+                    </div>
+                    <div class="header-content px-3">
+                      <h2 class="head">
+                        Become a Master Chef right at home!
+                      </h2>
+                      <p>We bring you hundreds of tasty recipes so your meal becomes just the best</p>
+                    </div>
+                  </header>
+                  <section class="meal-time  mb-4">
+                    <div class="p-4 px-md-5 py-2 shadow lunch">Lunch</div>
+                    <div class="p-4 px-md-5 py-2 shadow breakfast">Breakfast</div>
+                    <div class="p-4 px-md-5 py-2 shadow dinner">Dinner</div>
+                    <div class="p-4 px-md-5 py-2 shadow deserts">Deserts</div>
+                  </section>
+                  <section class="meal-items row justify-content-between">
+                    <div class="meal shadow-sm me-sm-3 mb-3 col-12 col-sm-5 p-3 py-4 flex-fill">
+                      <a href="">
+                      <div class="top-info">
+                        <div class="credits">
+                          Closet Cooking
+                        </div>
+                        <div class="rating">
+                          <i class="far fa-star me-2"></i>4.8
+                        </div>
+                      </div>
+                      <div class="bottom-info">
+                        <div class="title mb-1">Poutine with a mushroom gravy</div>
+                        <div class="time"><i class="far fa-clock me-2"></i>30 min</div>
+                      </div></a>
+                    </div>
+                    <div class="meal shadow-sm me-sm-3 mb-3 col-12 col-sm-5 p-3 py-4 flex-fill">
+                      <a href="">
+                      <div class="top-info">
+                        <div class="credits">
+                          Closet Cooking
+                        </div>
+                        <div class="rating">
+                          <i class="far fa-star me-2"></i>4.8
+                        </div>
+                      </div>
+                      <div class="bottom-info">
+                        <div class="title mb-1">Poutine with a mushroom gravy</div>
+                        <div class="time"><i class="far fa-clock me-2"></i>30 min</div>
+                      </div></a>
+                    </div>
+                    <div class="meal shadow-sm me-sm-3 mb-3 col-12 col-sm-5 p-3 py-4 flex-fill">
+                      <a href="">
+                      <div class="top-info">
+                        <div class="credits">
+                          Closet Cooking
+                        </div>
+                        <div class="rating">
+                          <i class="far fa-star me-2"></i>4.8
+                        </div>
+                      </div>
+                      <div class="bottom-info">
+                        <div class="title mb-1">Poutine with a mushroom gravy</div>
+                        <div class="time"><i class="far fa-clock me-2"></i>30 min</div>
+                      </div></a>
+                    </div>
+                    <div class="meal shadow-sm me-sm-3 mb-3 col-12 col-sm-5 p-3 py-4 flex-fill">
+                      <a href="">
+                      <div class="top-info">
+                        <div class="credits">
+                          Closet Cooking
+                        </div>
+                        <div class="rating">
+                          <i class="far fa-star me-2"></i>4.8
+                        </div>
+                      </div>
+                      <div class="bottom-info">
+                        <div class="title mb-1">Poutine with a mushroom gravy</div>
+                        <div class="time"><i class="far fa-clock me-2"></i>30 min</div>
+                      </div></a>
+                    </div>
+                  </section>
+                </section>
+                  <section class="recipe d-none">
+                    <div class="recipe-intro pe-3 shadow-sm py-3">
+                      <div class="image">
+                        <img class="img-fluid shadow" src="images/calum-lewis-vA1L1jRTM70-unsplash.jpg" alt="recipe-item-image">
+                      </div>
+                      <div class="content  mb-4">
+                        <div class="title ps-3">XYZ Titile</div>
+                        <div class="credit ps-3 mb-3">Lorem ipsum dolor sit</div>
+                        <div class="info">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum, dicta quidem nemo voluptatibus rem quasi saepe, nulla, quam dignissimos magni eum. Fuga laborum iste vel tempore quo ut aliquam deserunt.</div>
+                      </div>
+                      <div class="activity w-100 mb-4">
+                        <div class="add-favourite shadow-sm activity-btns p-1">Bookmark Recipe<i class="far fa-bookmark ms-2"></i></div>
+                      </div>
+                      <div class="about">
+                        <div class="about-items">
+                          <div class="num">30</div>
+                          <div class="time word">minutes</div>
+                        </div>
+                        <div class="about-items">
+                          <div class="num">4.5</div>
+                          <div class="rating word">rating</div>
+                        </div>
+                        <div class="about-items">
+                          <div class="num">700</div>
+                          <div class="likes word">Likes</div>
+                        </div>
+                        <div class="about-items">
+                          <div class="num">1K</div>
+                          <div class="views word">views</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="line shadow-sm"></div>
+                    <div class="ingredients shadow-sm p-3 pb-0">
+                      <div class="title  mb-1 text-center">Ingredients</div>
+                      <div class="servings-container text-center mb-2">
+                        <div class="servings me-3 text-center"><i class="fas fa-users me-2"></i>Servings :</div>
+                        <div class="plus-minus">
+                          <div class="plus"><i class="fas fa-plus p-1 me-2"></i></div>
+                          <div class="num mt-1">4</div>
+                          <div class="minus"><i class="fas fa-minus p-1 ms-2"></i></div>
+                        </div>
+                      </div>
+                      <ul>
+                        <li>
+                          <div class="finger">
+                            <i class="far fa-hand-point-right me-3 mb-2"></i>
+                          </div>
+                          <div class="info">
+                            2 ehieojll;gru
+                          </div>
+                        </li>
+                      </ul>
+                      <div class="directions text-center p-2 mb-3"><a href="#${}"> Directions to Cook!</a></div>
+                    </div>
+                  </section>
+                  <section class="bookmarks d-none">
+                    <div class="bookmark-item shadow-sm mb-3 px-2 pb-2">
+                      <div class="div d-flex align-items-center justify-content-between">
+                        <div class="bookmark-img d-inline-block">
+                          <img src="images/calum-lewis-vA1L1jRTM70-unsplash.jpg" class="shadow-sm" alt="">
+                        </div>
+                      </div>
+                      <div class="delete-bookmark d-flex justify-content-end align-items-center mt-2">
+                          <div class="del-bookmark-btn p-1 px-2 d-flex align-items-center">
+                            <span>Remove</span>
+                            </i> 
+                            </div>
+                      </div>
+                      <div class="bookmark-content">
+                        <div class="title  my-1">ABC Title Lorem ipsum dolor sit amet consectetur adipisicing elit.?</div>
+                        <div class="credit">Lorem ipsum dolor sit Lorem ipsum dolor sit.</div>
+                      </div>
+                        <a href="#${bookmark.id}" class="item-preview-link d-block w-100 mt-5">
+                          <div class="open-recipe text-center p-2">
+                            Open Recipe
+                          </div>
+                        </a>
+                    </div>
+                    <div class="bookmark-item shadow-sm mb-3 px-2 pb-2">
+                      <div class="div d-flex align-items-center justify-content-between">
+                        <div class="bookmark-img d-inline-block">
+                          <img src="images/calum-lewis-vA1L1jRTM70-unsplash.jpg" class="shadow-sm" alt="">
+                        </div>
+                      </div>
+                      <div class="delete-bookmark d-flex justify-content-end align-items-center mt-2">
+                          <div class="del-bookmark-btn p-1 px-2 d-flex align-items-center">
+                            <span>Remove</span>
+                            </i> 
+                            </div>
+                      </div>
+                      <div class="bookmark-content">
+                        <div class="title  my-1">ABC Title Lorem ipsum dolor sit amet consectetur adipisicing elit.?</div>
+                        <div class="credit">Lorem ipsum dolor sit Lorem ipsum dolor sit.</div>
+                      </div>
+                        <a href="#${bookmark.id}" class="item-preview-link d-block w-100 mt-5">
+                          <div class="open-recipe text-center p-2">
+                            Open Recipe
+                          </div>
+                        </a>
+                    </div>
+                    <div class="bookmark-item shadow-sm mb-3 px-2 pb-2">
+                      <div class="div d-flex align-items-center justify-content-between">
+                        <div class="bookmark-img d-inline-block">
+                          <img src="images/calum-lewis-vA1L1jRTM70-unsplash.jpg" class="shadow-sm" alt="">
+                        </div>
+                      </div>
+                      <div class="delete-bookmark d-flex justify-content-end align-items-center mt-2">
+                          <div class="del-bookmark-btn p-1 px-2 d-flex align-items-center">
+                            <span>Remove</span>
+                            </i> 
+                            </div>
+                      </div>
+                      <div class="bookmark-content">
+                        <div class="title  my-1">ABC Title Lorem ipsum dolor sit amet consectetur adipisicing elit.?</div>
+                        <div class="credit">Lorem ipsum dolor sit Lorem ipsum dolor sit.</div>
+                      </div>
+                        <a href="#${bookmark.id}" class="item-preview-link d-block w-100 mt-5">
+                          <div class="open-recipe text-center p-2">
+                            Open Recipe
+                          </div>
+                        </a>
+                    </div>
+                    <div class="bookmark-item shadow-sm mb-3 px-2 pb-2">
+                      <div class="div d-flex align-items-center justify-content-between">
+                        <div class="bookmark-img d-inline-block">
+                          <img src="images/calum-lewis-vA1L1jRTM70-unsplash.jpg" class="shadow-sm" alt="">
+                        </div>
+                      </div>
+                      <div class="delete-bookmark d-flex justify-content-end align-items-center mt-2">
+                          <div class="del-bookmark-btn p-1 px-2 d-flex align-items-center">
+                            <span>Remove</span>
+                            </i> 
+                            </div>
+                      </div>
+                      <div class="bookmark-content">
+                        <div class="title  my-1">ABC Title Lorem ipsum dolor sit amet consectetur adipisicing elit.?</div>
+                        <div class="credit">Lorem ipsum dolor sit Lorem ipsum dolor sit.</div>
+                      </div>
+                        <a href="#${bookmark.id}" class="item-preview-link d-block w-100 mt-5">
+                          <div class="open-recipe text-center p-2">
+                            Open Recipe
+                          </div>
+                        </a>
+                    </div>
+                  </section>
+                  <section class="reviews mx-5 px-5">
+                    <div class="comment-container mb-3">
+                      <div class="vertical-line d-none mx-4 ms-5"></div>
+                      <div class="comment d-none shadow-sm p-4">
+                        <div class="image">
+                          <img src="https://randomuser.me/api/portraits/women/82.jpg" alt="">
+                        </div>
+                        <div class="text-content">
+                          <div class="content mb-3">
+                            <div class="top mb-2">
+                              <div class="name">Sanya Lizard <span class="d-none you ms-3 px-2">you</span> <span class="time ms-3">1 month ago</span></div>
+                               <div class="delete d-none"><i class="fas fa-trash-alt me-2"></i>Delete</div>
+                            </div>
+                            <div class="thoughts">
+                              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae quaerat nisi ducimus. Odio quam perferendis corrupti porro, reprehenderit illum quia asperiores aliquid a. Autem quod nulla aliquam officiis expedita aliquid?
+                            </div>
+                          </div>
+                          <div class="activity">
+                            <div class="likes">
+                              <i class="far fa-thumbs-up me-2"></i><span class="like-num">87</span> Likes
+                            </div>
+                            <div class="reply ">Reply</div>
+                            <div class="edit d-none">Edit</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="comment-box d-none shadow-sm p-4 w-100">
+                      <div class="image">
+                        <img src="https://randomuser.me/api/portraits/women/81.jpg" alt="">
+                      </div>
+                      <div class="text-area">
+                        <textarea class="text-area w-100 p-2" placeholder="Add your thoughts..." cols="" rows=""></textarea>
+                      </div>
+                      <div class="btn-container">
+                        <div class=" py-2 px-3 send edit submit-reply submit-btn">
+                          SEND
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <div class="trending-div d-none">
+                    <article class="trending trend">
+                      <div class="main-section ">
+                        <div class="list-item-group">
+                          
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                <!-- <section class="search-results">
+                  <div class="result shadow">
+                    <div class="result-img overflow-hidden ">
+                      <img src="images/calum-lewis-vA1L1jRTM70-unsplash.jpg" class="img-fluid shadow-sm" alt="">
+                    </div>
+                    <div class="result-content p-4 flex-grow-1">
+                      <div class="result-info">
+                        <div class="title">XYZ Title</div>
+                        <div class="credit">Lorem, ipsum dolor.</div>
+                      </div>
+                      <div class="result-rating">
+                        <div class="likes">3.2K views</div>
+                        <div class="bullet">•</div>
+                        <div class="stars">1 week ago</div>
+                      </div>
+                    </div>
+                  </div>
+                </section> -->
+              </div>
+              <div class="red px-2 px-sm-5 px-xl-4 pt-1">
+                <a href="#home" class="d-inline-block text-decoration-none">
+               <div class="home-link">
+                <i class="fas fa-house-user d-block"></i>
+                <span>Home</span>
+               </div></a>
+                 <a href="#bookmarks" class="d-inline-block text-decoration-none">
+               <div class="bookmarks-link">
+                <i class="fas fa-bookmark d-block text-center"></i>
+                <span>Bookmarks</span>
+               </div></a>
+                 <a href="#add-recipe-link" class="d-inline-block text-decoration-none">
+               <div class="add-recipe">
+                <i class="fas fa-plus-square d-block"></i>
+                <span>Add Recipe</span>
+               </div></a>
+               <a class="  d-inline-block d-xl-none text-decoration-none">
+                <div class="trending-link ">
+                 <i class="fab fa-gripfire  d-block"></i>
+                 <span>Trending</span>
+                </div></a>
+                <a href="#feedback" class="d-inline-block text-decoration-none">
+               <div class="feedback-link">
+                <i class="fas fa-comment-dots d-block"></i>
+                <span>Feedback</span>
+               </div></a>
+               
+              </div>
+            </article> 
+          </section>
+      </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+     <script src="script.js"></script>
+     <script src="https://kit.fontawesome.com/63e475a968.js" crossorigin="anonymous"></script>
+  </body>
+</html>
+<!-- Illustration by <a href="https://icons8.com/illustrations/author/5c07e68d82bcbc0092519bb6">Icons 8</a> from <a href="https://icons8.com/illustrations">Ouch!</a> -->

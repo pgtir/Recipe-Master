@@ -1,0 +1,150 @@
+@media (max-width: 1400px) {
+    
+
+}
+
+@media (max-width: 1200px) {
+    .bookmark-item {
+        flex-basis: 45%;
+    }
+    .result-content {
+        flex-grow: 1;
+    }
+    .result img {
+        width: 18rem;
+    }
+    .trending {
+        display: none;
+    }
+    .trend{
+        width: 100%;
+        position: static;
+        margin-top: 0;
+        /* display: n; */
+    }
+    .trend .list-item-group {
+        margin-top: 0;
+    }
+    
+    .highlights {
+        width: 100%;
+        left: 0%;
+    }
+    .user, .red {
+        width: 85%;
+        
+    }
+    .blue {
+        margin-top: 4rem;
+        padding-bottom: 2rem;
+    }
+    header {
+        justify-content: center;
+    }
+    .header-img {
+        width: 5rem;
+    }
+    .about-items {
+        flex-grow: 1;
+    }
+}
+
+@media (max-width: 992px) {
+    
+}
+@media (max-width: 768px){
+    .bookmarks {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 4rem;
+    }
+    .bookmark-item {
+        flex-basis: unset;
+        width: 70%;
+    }
+    .recipe-intro .activity-btns {
+        flex-basis: 70%;
+    }
+
+    .recipe-intro .activity , .recipe-intro .about {
+        margin-left: 11vw;
+    }
+    .recipe-intro img {
+        height: 20vw;
+        width: 20vw;
+    }
+    .content .title {
+        margin-left: 12.3vw;
+    }
+    .content .credit {
+        margin-left: 12vw;
+    }
+    .content .info {
+        margin-left: 11vw;
+    }
+  main{
+      height: 100%;
+      width: 100%;
+      top: 0;
+      border-radius: 0px;
+  }
+  .top-head{
+      width: 100%;
+      border-radius: 0px;
+  }
+  .user{
+      width: 100%;
+}
+.result img {
+    width: clamp(10rem, 30vw, 10rem);
+}
+.red {
+    width: 100%;
+      bottom: 0px;
+      border-bottom-right-radius: 0px;
+  }
+  :root {
+    --bigger: clamp(1.3rem, 2.1vw, 5rem);
+
+  }
+}
+@media (max-width: 460px) {
+    .bookmark-item {
+        width: 86%;
+    }
+    .header-img {
+        width: 8rem;
+    }
+    .recipe-intro, .ingredients {
+        width: 85%;
+    }
+    .user {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .user .search {
+        margin-bottom: 10px;
+    }
+    .user .greeting {
+     justify-content: space-between;
+    }
+
+    .blue{
+        margin-top: 7rem;
+    }
+    :root {
+        --bigger: clamp(1rem, 2.1vw, 5rem);
+        --small: clamp(0.67rem, 1.16vw, 2rem);
+      }
+      .meal-time {
+          overflow-x: scroll;
+      }
+      .meal-time div {
+          margin-right: 40px;
+          margin-bottom: 2px;
+      }
+      .meal-time::-webkit-scrollbar {
+          /* display: none; */width: 1px;
+  height: 5px;
+      }
+}

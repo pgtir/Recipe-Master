@@ -1,0 +1,45 @@
+{
+  "currentUser": {
+    "image": "https://randomuser.me/api/portraits/women/81.jpg",
+    "username": "Martha",
+    "content": ""
+  },
+  "comments": [
+    {
+      "id": 1,
+      "createdAt": "1 month ago",
+      "likes": 87,
+      "content": " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae quaerat nisi ducimus. Odio quam perferendis corrupti porro, reprehenderit illum quia asperiores aliquid a. Autem quod nulla aliquam officiis expedita aliquid?",
+      "user": {
+        "image": "https://randomuser.me/api/portraits/women/82.jpg",
+        "username": "Sanya"
+      },
+      "replies": []
+    },
+    {
+      "id": 2,
+      "createdAt": "2 weeks ago",
+      "likes": 65,
+      "content": " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae quaerat nisi ducimus. Odio quam perferendis corrupti porro, reprehenderit illum quia asperiores aliquid a. Autem quod nulla aliquam officiis expedita aliquid?",
+      "user": {
+        "image": "https://randomuser.me/api/portraits/men/22.jpg",
+        "username": "Jonas"  
+      },
+      "replies": [
+        {
+          "id": 3,
+          "createdAt": "1 week ago",
+          "likes": 54,
+          "content": " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae quaerat nisi ducimus. Odio quam perferendis corrupti porro, reprehenderit illum quia asperiores aliquid a. Autem quod nulla aliquam officiis expedita aliquid?",
+          "replyingTo": "Jonas",
+          "user": {
+            "image": "https://randomuser.me/api/portraits/men/29.jpg",
+            "username": "Harshvardhan"
+          }
+        } 
+        
+      ]
+    }
+  ]
+}
+
